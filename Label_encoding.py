@@ -21,10 +21,12 @@ def main(df_data):
             df_encode_table=pd.concat([df_encode_table, df], axis=1)
     df_data.to_csv("le_encoded_data.csv")
     df_encode_table.to_csv("le_table.csv")
+    
+    return df_data
              
 if __name__=="__main__":
     
     df_data=pd.read_csv("Dataset\\marketing_campaign.csv", index_col=0, sep="\t")
     
-    main(df_data)
+    df_data=main(df_data)
     
